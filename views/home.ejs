@@ -191,6 +191,14 @@
                 padding: 8px 10px;
             }
         }
+        .short-a1{
+            text-decoration: none;
+            color:rgb(138, 138, 246);
+        }
+        .short-a2{
+            text-decoration: none;
+            color:rgb(138, 138, 246);
+        }
     </style>
 </head>
 <body>
@@ -198,7 +206,7 @@
 
     <div class="inputdata">
         <% if(locals.id){%>
-            <p>ShortId for this URL : https://url-deployment/url/<%= locals.id %></p>
+            <p>ShortId for this URL : <a href="/url/<%= locals.id %>" class="short-a1"><%= locals.id %></a></p>
         <% } %>
         <% if(locals.adminMsg){%>
             <p><%= adminMsg %></p>
@@ -227,7 +235,7 @@
                     <% urls.forEach((ele, index) => { %>
                     <tr>
                         <td><%= index + 1 %></td>
-                        <td> https://url-deployment/url/<%= ele.shortId %></td>
+                        <td><a href="/url/<%= ele.shortId %>" class="short-a2"><%= ele.shortId %></a></td>
                         <td><%= ele.redirectUrl %></td>
                         <td><%= ele.visitHistory.length %></td>
                     </tr>
